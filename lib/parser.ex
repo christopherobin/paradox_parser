@@ -1,10 +1,10 @@
 defmodule ParadoxParser do
   def read_file(file) do
     # Paradox files are written in european ISO, convert them
-    {:ok, content} = Codepagex.to_string(File.read!(file), :iso_8859_1)
-    {:ok, tokens, _} = lex(to_charlist(content))
-    {:ok, [data | _]} = parse(tokens)
-    {:ok, Enum.reduce(data, %{}, &parse_list/2)}
+    with {:ok, content}    <- Codepagex.to_string(File.read!(file), :iso_8859_1),
+         {:ok, tokens, _}  <- lex(to_charlist(content)),
+         {:ok, [data | _]} <- parse(tokens),
+         do: {:ok, Enum.reduce(data, %{}, &parse_list/2)}
   end
 
   def read_file!(file) do
@@ -13,9 +13,9 @@ defmodule ParadoxParser do
   end
 
   def read_string(content) do
-    {:ok, tokens, _} = lex(to_charlist(content))
-    {:ok, [data | _]} = parse(tokens)
-    {:ok, Enum.reduce(data, %{}, &parse_list/2)}
+    with {:ok, tokens, _}  <- lex(to_charlist(content)),
+         {:ok, [data | _]} <- parse(tokens),
+         do: {:ok, Enum.reduce(data, %{}, &parse_list/2)}
   end
 
   def read_string!(content) do

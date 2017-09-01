@@ -1,3 +1,3 @@
-%{"codepagex": {:hex, :codepagex, "0.1.3", "35cb0d6731c44b07ce619c20da0501be0e0832abaf131063889ad4473aab6abe", [:mix], []},
+%{"codepagex": {:hex, :codepagex, "0.1.4", "dae3bc57e9334c324914b32ed61c0a30929fac3e73dc71fc611ed7eeb2dcb867", [:mix], [], "hexpm"},
   "iconv": {:hex, :iconv, "1.0.2", "a0792f06ab4b5ea1b5bb49789405739f1281a91c44cf3879cb70e4d777666217", [:rebar3], [{:p1_utils, "1.0.5", [hex: :p1_utils, optional: false]}]},
   "p1_utils": {:hex, :p1_utils, "1.0.5", "3e698354fdc1fea5491d991457b0cb986c0a00a47d224feb841dc3ec82b9f721", [:rebar3], []}}
